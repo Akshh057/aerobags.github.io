@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+*{  
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat',sans-serif;
+    box-sizing: border-box;
+}
+body{
+     background-color: white;
+}
+header{
+    width: 100%;
+}
+#tag{
+    margin-top: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+#tag img{
+    width: 50px;
+    height: 50px;
+}
+h1{
+    font-size: 50px;
+    text-align: center;
+    font-family: 'Playfair Display', serif;}
+nav{
+    /* background-color: #fafaf6; */
+    width: 100%;
+    /* display: flex; */
+    /* justify-content: space-between; */
+}
+
+#logo img{
+    width: 50%;
+    height: auto;
+    margin-left: 23%;
+    margin-top: 2%;
+}
+#img4{
+    height: 10px;
+}
+
+#form{
+    margin: auto;
+    position: relative;
+    width: 90%;
+    height: 70vh;
+}
+
+select{
+    text-indent: 15px;
+    background-color: #fafaf6;
+
+}
+select:focus{
+    background-color: #ebebe8;
+}
+#form button{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    color: white;
+    background-color:#1E88E5;
+}
+/* #form button:hover{
+    background-color:#fafaf6;
+    color: #1E88E5;
+} */
+#how-to h3{
+    margin-left: 30px;
+}
+.airport-select{
+    text-indent: 8px;
+}
+#airline-select{
+    text-indent: 8px;
+    font-size: 1.1em;
+    width: 100%;
+}
+
+
+.input{
+    height: 10vh;
+    margin-top: 10px;
+    border-style: none;
+    border-radius: 5px;
+}
+.col{
+    height: 8vh;
+    margin-top: 10px;
+    border-style: none;
+    border-radius: 16px;
+     background-color: #1E88E5;
+     color: white;
+
+}
+input[type=date]{
+    width: 100%;
+    font-size: 1em;
+    background-color: #fafaf6;
+
+}
+input[type=date]:before{
+    content: attr(placeholder) !important;
+    color: #aaa;
+    margin-right: 0.5em;
+}
+.airport-select, button{
+    width: 100%;
+    font-size: 1.1em;
+    display: block;
+    position: relative;
+    top: 10px;
+    border-radius: 16px;
+}
+.sub-container{
+    margin: auto;
+    width: 90%;
+    margin-top: 20px;
+    position: relative;
+    border-radius: 5px;
+    padding-top: 10%;
+    /* background-color: #fafaf6; */
+}
+.subcontainer1{
+   
+}
+
+.steps{
+    margin-top: 30px;
+    display: flex;
+    justify-content: start;
+}
+.step-no{
+    margin-left: 5px;
+    line-height: 45px;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 50%;
+    color: #1E88E5;
+}
+
+.step-detail{
+    font-size: 14px;
+    margin-left: 40px;
+    width: 70%;
+}
+
+.adv{
+    margin-top: 20px;
+    display: flex;
+}
+
+.adv img{
+    margin-bottom: 20px;
+    max-width: 150px;
+    max-height: 180px;
+    border-radius: 25px;
+    background-size: contain;
+
+}
+.text{
+    margin-left: 20px;
+    margin-top: 30px;
+}
+
+
+input[type=date]:required:invalid::-webkit-datetime-edit {
+    color: transparent;
+}
+input[type=date]:focus::-webkit-datetime-edit {
+    color: solidblack;
+}
+

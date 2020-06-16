@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Pickup Address</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+    integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+    integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+    crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Merienda&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+
+  <style type="text/css">
+    body {
+      color: #13334c;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .div3 {
+      margin-top: 5%;
+
+    }
+
+    #map {
+      height: 40%;
+    }
+
+    #floating-panel {
+      position: absolute;
+      top: 10px;
+      left: 12%;
+      z-index: 5;
+      background-color: #fff;
+      padding: 5px;
+      border: 1px solid #999;
+      text-align: center;
+      font-family: 'Roboto', 'sans-serif';
+      line-height: 30px;
+      padding-left: 10px;
+    }
+
+    .header-div {
+      padding-top: 25px;
+      display: flex;
+      margin-top: -12px;
+      background-color: #f0f0f0;
+      width: 100%;
+      height: 16vh;
+      border-radius: 15px;
+
+    }
+
+   #logo {
+    margin-left: 20px;
+    margin-top: 10px;
+    height: 6vh;
+    width: 40%;
+  }
+
+
+    #back {
+      margin-left: 20px;
+      height: 20px;
+      width: 20px;
+      margin-top: 10%;
+    }
+
+    .details {
+      /* margin-top: 10px; */
+      margin-left: 20px;
+    }
+
+    #back {
+      margin-left: 20px;
+      height: 20px;
+      width: 20px;
+      margin-top: 50%;
+    }
+
+    #time {
+      margin-top: 10px;
+      font-size: small;
+    }
+
+    @media(min-width: 320px) {
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .div1 {
+        height: 100vh;
+        width: 100%
+      }
+
+      .div2 {
+        height: 14vh;
+        width: 100%;
+        background-color: #f0f0f0;
+        border-radius: 12px;
+        font-size: 12px;
+        padding-top: 2%;
+
+
+      }
+
+      input[type=text] {
+        border-radius: 5px;
+        height: 8vh;
+      }
+
+      .bt1 {
+        height: 7vh;
+        width: 80%;
+        border: none;
+        color: white;
+        background-color: #3d5af1;
+        margin-left: 10%;
+        margin-top: 2%;
+        border-radius: 10px;
+        font-family: 'Montserrat', sans-serif;
+      }
+    }
+  </style>
+</head>
+
+<body onload="init();">
+  <div class="div1">
+    <div class="header-div">
+      <a href="time.html"> <img id="back" src="back.jpg" alt=""> </a>
+      <img id="logo" src="logo.jpg" alt="">
+      <span style="position: relative; font-size: 20px; top: 18px; left: 100px;"> 3</span>
+    </div>
+    <br>
+    <div style="font-size: 24px; color: black; font-style: bold; margin-left: 5%; margin-top: -2%;">
+      Where shall we pickup your luggage?
+    </div>
+    <div class="container">
+
+      <!--<div class="form-group">
+				<div class="row">
+					<div class="col-sm-10">
+						<input type="text" name="fname" class="form-control" placeholder="Address" id="address">
+					</div>
+				</div>
+			</div>-->
+      <div class="form-group">
+        <div class="row">
+          <div class="col-sm-10">
+            <input type="text" name="fname" class="form-control" id="address" style="margin-top: 3%;" required="">
+            <div class="row">
+              <input type="submit" name="submit" class="btn btn-outline-success" value="Search" style=" margin-left: 33%; color: white;
+		background-color: #3d5af1; text-align: center; margin-top: 4%;" id="submit">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="map"></div>
+    <div class="div5" onmouseover="tosubmit();">
+      <a href="delivery1.html"> <button class="bt1"> Continue</button> </a>
+    </div>
+
+  </div>
+
+  <script>
+    function init() {
+      // Retrieving the text input's value which was stored into localStorage
+      var source = localStorage.getItem("source");
+      var destination = localStorage.getItem("destination");
+      var time = localStorage.getItem("time");
+
+      // Writing the value in the document
+      document.getElementById('flight').innerHTML = source + " " + "---" + "  " + destination;
+      document.getElementById('time').innerHTML = time;
+    }
+    function tosubmit() {
+      // Getting the value of your text input
+      var address = document.getElementById("address").value;
+
+      // Storing the value above into localStorage
+      localStorage.setItem("address", address);
+
+
+      return true;
+      if (address == "") {
+        alert("Please Enter pickup address");
+      }
+    }
+    function initMap() {
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 5,
+        center: { lat: 40.397, lng: -101.644 }
+      });
+      var geocoder = new google.maps.Geocoder();
+
+      document.getElementById('submit').addEventListener('click', function () {
+        geocodeAddress(geocoder, map);
+      });
+    }
+
+    function geocodeAddress(geocoder, resultsMap) {
+      var address = document.getElementById('address').value;
+      geocoder.geocode({ 'address': address }, function (results, status) {
+        if (status === 'OK') {
+          resultsMap.setCenter(results[0].geometry.location);
+          var marker = new google.maps.Marker({
+            map: resultsMap,
+            position: results[0].geometry.location
+          });
+        } else {
+          alert('Geocode was not successful for the following reason: ' + status);
+        }
+      });
+    }
+  </script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWEpkqON310VQ8etcvAT1BGXtwUB5t4fw&callback=initMap">
+    </script>
+</body>
+
+</html>

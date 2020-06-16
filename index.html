@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Travel</title>
+</head>
+<style type="text/css">
+    .container1 {
+        height: 20vh;
+        width: 100%;
+    }
+
+    .collapsible {
+        background-color: #fff;
+        color: black;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+    }
+
+    .active,
+    .collapsible:hover {
+        background-color: #fff;
+    }
+
+    .collapsible:after {
+        content: '\002B';
+        color: lightblue;
+        font-weight: bold;
+        float: right;
+        margin-left: 5px;
+        font-size: 20px;
+        background-color: #FAFAFA;
+    }
+
+    .active:after {
+        content: "\2212";
+    }
+
+    .content {
+        padding: 0 18px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+        background-color: #fff;
+    }
+</style>
+
+<body>
+    <header>
+        <nav>
+            <div id="logo" class="nav-item"><img src="logo.jpg" alt="logo" height="100px" width="100px">
+
+            </div>
+        </nav>
+    </header>
+
+    <div class="main-container" style="background-color:#FAFAFA; position: relative; top: 10px;">
+        <div id="tag">
+            <img src="school-backpack.png" alt="bag">
+            <img src="airplane.png" alt="plane">
+            <!-- <h1>Skybags</h1> -->
+            <h4 style="position: relative; top: 15px;">Select your origin airport and flight</h4>
+        </div>
+        <div class="sub-container subcontainer1" id="form" style="background-color:#FAFAFA;">
+            <form action="luggage.html">
+                <select name="origin-apt" class="input airport-select" id="source">
+                    <option value="" disabled selected="">Origin Airport</option>
+                    <option value="Den Helder Airport DHR"><span>Den Helder Airport ,DHR</span></option>
+                    <option value="Amsterdam Airport Schiphol AMS">Amsterdam Airport Schiphol ,AMS</option>
+                    <option value="F.D. Roosevelt Airport EUX">F.D. Roosevelt Airport ,EUX</option>
+                    <option value="Maastricht Aachen Airport MST">Maastricht Aachen Airport ,MST</option>
+                    <option value="Groningen Airport Eelde GRQ">Groningen Airport Eelde ,GRQ</option>
+                </select>
+                <select name="origin-apt" class="input airport-select" id="destination" onfocus="check()"
+                    onblur="checks()">
+                    <option value="" disabled selected="">Destination Airport</option>
+                    <option value="Den Helder Airport DHR"><span>Den Helder Airport ,DHR</span></option>
+                    <option value="Amsterdam Airport Schiphol AMS">Amsterdam Airport Schiphol ,AMS</option>
+                    <option value="F.D. Roosevelt Airport EUX">F.D. Roosevelt Airport ,EUX</option>
+                    <option value="Maastricht Aachen Airport MST">Maastricht Aachen Airport ,MST</option>
+                    <option value="Groningen Airport Eelde GRQ">Groningen Airport Eelde ,GRQ</option>
+                </select>
+                <!--  <input required type="text" name="origin" placeholder="Origin Airport" class="input">
+                <input required type="text" name="destination" placeholder="Destination Airport" class="input"> -->
+                <select name="Airline" class="input" id="airline-select">
+                    <option value="" disabled selected="">Choose Airlines</option>
+                    <option value="KLM">KLM</option>
+                    <option value="AIS Airlines">AIS Airlines</option>
+                    <option value="Corendon Dutch Airlines">Corendon Dutch Airlines</option>
+                    <option value="Transavia">Transavia</option>
+                </select>
+                <input required type="date" class="input" id="time" placeholder="Departure date">
+                <button class=" col" onclick="tosubmit()">Book Now</button>
+            </form>
+        </div>
+        <!-- comments 
+        <div class="container1">
+            <p style="font-size: 20px; color: black; margin-left: 5%; margin-top: 5%;">Answers to any question</p>
+            <br>
+            <button type="button" class="collapsible">Q1: How much does the service cost?</button>
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat.</p>
+            </div>
+            <button type="button" class="collapsible">Q2: How does it work?</button>
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat.</p>
+            </div>
+            <button type="button" class="collapsible">Q3: How do I book a service?</button>
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat.</p>
+            </div>
+            <button type="button" class="collapsible">Q4: How is the luggage pick up process?</button>
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat.</p>
+            </div>
+            <button type="button" class="collapsible">Q5: How do you check-in my luggage</button>
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat.</p>
+            </div>
+            -->
+
+            <script>
+                var coll = document.getElementsByClassName("collapsible");
+                var i;
+
+                for (i = 0; i < coll.length; i++) {
+                    coll[i].addEventListener("click", function () {
+                        this.classList.toggle("active");
+                        var content = this.nextElementSibling;
+                        if (content.style.maxHeight) {
+                            content.style.maxHeight = null;
+                        } else {
+                            content.style.maxHeight = content.scrollHeight + "px";
+                        }
+                    });
+                }
+            </script>
+        </div>
+
+
+    </div>
+</body>
+<script type="text/javascript">
+
+
+    function check() {
+        var a = document.getElementById('source').value;
+        var selectobject = document.getElementById("destination");
+        for (var i = 0; i < selectobject.length; i++) {
+            if (selectobject.options[i].value == a)
+                selectobject.remove(i);
+        }
+    }
+    function checks() {
+        var n = document.getElementById('source');
+        var c = document.getElementById("destination").value;
+        for (var i = 0; i < n.length; i++) {
+            if (n.options[i].value == c)
+                n.remove(i);
+        }
+    }
+    function tosubmit() {
+        // Getting the value of your text input
+        var source = document.getElementById("source").value;
+        var destination = document.getElementById("destination").value;
+        var time = document.getElementById("time").value
+
+        // Storing the value above into localStorage
+        localStorage.setItem("source", source);
+        localStorage.setItem("destination", destination);
+        localStorage.setItem("time", time);
+
+
+
+        return true;
+    }
+
+</script>
+
+</html>

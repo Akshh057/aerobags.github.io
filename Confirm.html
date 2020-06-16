@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="contact.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order detail</title>
+    <style type="text/css">
+        .div2 {
+            height: 16vh;
+            width: 100%;
+            background-color: #f0f0f0;
+            border-radius: 12px;
+        }
+
+        .header-div {
+            padding-top: 25px;
+            display: flex;
+            margin-top: -12px;
+            background-color: #f0f0f0;
+            width: 100%;
+            height: 16vh;
+            border-radius: 15px;
+
+        }
+
+        .details {
+            /* margin-top: 10px; */
+            margin-left: 20px;
+        }
+
+        #back {
+            margin-left: 20px;
+            height: 20px;
+            width: 20px;
+            margin-top: 50%;
+        }
+
+       #logo {
+        margin-left: 20px;
+        margin-top: 10px;
+        height: 6vh;
+        width: 40%;
+    }
+        #time {
+            margin-top: 10px;
+            font-size: small;
+        }
+
+        @media(min-width: 320px) {
+            .div2 {
+                font-size: 12.3px;
+            }
+        }
+    </style>
+</head>
+
+<body onload="init()">
+    <header>
+        <div class="header-div">
+            <a href="Contact.html"> <img id="back" src="back.jpg" alt=""> </a>
+            <img id="logo" src="logo.jpg" alt="">
+            <span style="position: relative; font-size: 20px; top: 18px; left: 100px;"> 6</span>
+        </div>
+    </header>
+    <div class="form-container">
+        <form action="#">
+            <div class="order subform">
+                <h4>Order Details</h4>
+                <div class="radio-box plane">
+                    <i class="fas fa-plane-departure"></i>
+                    <span style="margin-right: 10%;  font-size: 15px; margin-top: 2%;" id="sp1"></span>
+                </div>
+                <div class="radio-box">
+                    <label for="origin" id="l1" style="font-size: 20px"></label><br>
+                </div>
+                <div class="radio-box">
+                    <label for="destination" id="l2" style="font-size: 20px"></label><br>
+                </div>
+            </div>
+            <div class="pickup subform">
+                <h4>Pickup Details</h4>
+                <i class="fas fa-map"></i>
+                <p id="t1" style="margin-left: 15%; margin-top:8%;"> </p>
+                <i class="far fa-calendar"></i>
+                <p id="t2" style="margin-left: 15%; margin-top:8%;"> </p>
+            </div>
+            <div class="delivery subform">
+                <h4>Delivery Details</h4>
+                <i class="fas fa-map"></i>
+                <p id="t4" style="margin-left: 15%; margin-top:9%;"> </p>
+                <i class="far fa-calendar"></i>
+                <p id="t3" style="margin-left: 15%; margin-top:8%;"> </p>
+            </div>
+            <div class="delivery subform" style="height: 20vh;">
+                <h4>Luggage Details</h4>
+                <span class="sp10" style="margin-left: 5%;">
+                    Total No. of Luggages -
+                </span>
+                <span id="t5" style="margin-left: 2%;">
+                    
+                </span>
+                <span style="position: relative; left: 40px; top: 1px"> <br>
+
+                </span>
+                <span id="t6" style="position: relative; left: 16px; top: 6px">
+
+                </span>
+            </div>
+            <button>Confirm</button>
+        </form>
+    </div>
+</body>
+<script type="text/javascript">
+    function init() {
+        // Retrieving the text input's value which was stored into localStorage
+        var source = localStorage.getItem("source");
+        var destination = localStorage.getItem("destination");
+        var time = localStorage.getItem("time");
+        var address = localStorage.getItem("address");
+        var pincode = localStorage.getItem("pincode");
+        var d1 = localStorage.getItem("d1");
+        var c = localStorage.getItem("amount");
+        var k = localStorage.getItem('p1');
+        var se = localStorage.getItem("search");
+
+
+
+        // Writing the value in the document
+        
+        document.getElementById('sp1').innerHTML = source;
+        document.getElementById('l1').innerHTML = source;
+        document.getElementById('l2').innerHTML = destination;
+        document.getElementById('t1').innerHTML = address;
+        document.getElementById('t2').innerHTML = time;
+        document.getElementById('t3').innerHTML = time;
+        document.getElementById('t4').innerHTML = se;
+        document.getElementById('t5').innerHTML = k;
+        document.getElementById('t6').innerHTML = c;
+
+
+
+
+
+    }
+</script>
+
+</html>

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		Pickup time
+	</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<meta charset="UTF-8">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+	<style type="text/css">
+		* {
+			margin: 0px;
+			padding: 0px;
+			color: #13334c;
+		}
+
+		body {
+			color: #13334c;
+			font-family: 'Montserrat', sans-serif;
+		}
+
+		.bt1 {
+			font-family: 'Montserrat', sans-serif;
+		}
+
+		.div3 {
+			margin-top: 5%;
+			padding-left: 2%;
+		}
+
+		#back {
+			margin-left: 20px;
+			height: 20px;
+			width: 20px;
+			margin-top: 50%;
+		}
+
+		#logo {
+		margin-left: 20px;
+		margin-top: 10px;
+		height: 6vh;
+		width: 40%;
+	}
+
+		.header-div {
+			padding-top: 25px;
+			display: flex;
+			margin-top: -12px;
+			background-color: #f0f0f0;
+			width: 100%;
+			height: 13vh;
+			border-radius: 15px;
+
+		}
+
+		@media(min-width: 320px) {
+
+			.div1 {
+				height: 100vh;
+				width: 100%
+			}
+
+			.div2 {
+				height: 16vh;
+				width: 100%;
+				background-color: #f0f0f0;
+				border-radius: 12px;
+				font-size: 12px;
+			}
+
+			.div3 {
+				height: 25vh;
+				width: 100%;
+
+			}
+
+			.p1 {
+				font-size: 24px;
+				color: black;
+				font-weight: bold;
+			}
+
+			.p2 {
+				margin-top: 3%;
+				font-size: 15px;
+				color: grey;
+				font-weight: bold;
+			}
+
+			.div4 {
+				height: 50vh;
+				width: 100%;
+			}
+
+			.container {
+				display: block;
+				position: relative;
+				padding-left: 45px;
+				margin-bottom: 12px;
+				top: 2px;
+				cursor: pointer;
+				font-size: 22px;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+			}
+
+			/* Hide the browser's default radio button */
+			.container input {
+				position: absolute;
+				opacity: 0;
+				cursor: pointer;
+			}
+
+			/* Create a custom radio button */
+			.checkmark {
+				position: absolute;
+				top: 2px;
+				left: 0;
+				height: 25px;
+				width: 25px;
+				background-color: #eee;
+				border-radius: 50%;
+				margin-left: 2%;
+			}
+
+			/* On mouse-over, add a grey background color */
+			.container:hover input~.checkmark {
+				background-color: #ccc;
+			}
+
+			/* When the radio button is checked, add a blue background */
+			.container input:checked~.checkmark {
+				background-color: #2196F3;
+			}
+
+			/* Create the indicator (the dot/circle - hidden when not checked) */
+			.checkmark:after {
+				content: "";
+				position: absolute;
+				display: none;
+			}
+
+			/* Show the indicator (dot/circle) when checked */
+			.container input:checked~.checkmark:after {
+				display: block;
+			}
+
+			/* Style the indicator (dot/circle) */
+			.container .checkmark:after {
+				top: 9px;
+				left: 9px;
+				width: 8px;
+				height: 8px;
+				border-radius: 50%;
+				background: white;
+			}
+
+			.div5 {
+				height: 10vh;
+				width: 100%;
+			}
+
+			.bt1 {
+				height: 7vh;
+				width: 80%;
+				border: none;
+				color: white;
+				background-color: #3d5af1;
+				margin-left: 10%;
+				margin-top: 2%;
+				border-radius: 10px;
+			}
+
+			input[type=date] {
+				height: 8vh;
+				width: 80%;
+				border: none;
+				border-radius: 12px;
+				border: 1px solid lightgrey;
+				outline: none;
+				margin-top: 1%;
+				margin-left: 8%;
+
+			}
+		}
+
+		@media(min-width: 345px) {
+			body {
+				color: #13334c;
+			}
+
+			.div1 {
+				height: 100vh;
+				width: 100%
+			}
+
+			.div2 {
+				height: 14vh;
+				width: 100%;
+				background-color: #f0f0f0;
+				border-radius: 12px;
+			}
+
+			.div3 {
+				height: 25vh;
+				width: 100%;
+
+			}
+
+			.p1 {
+				font-size: 24px;
+				color: black;
+				font-weight: bold;
+			}
+
+			.p2 {
+				margin-top: 3%;
+				font-size: 15px;
+				color: grey;
+				font-weight: bold;
+			}
+
+			.div4 {
+				height: 45vh;
+				width: 100%;
+
+			}
+
+			.container {
+				display: block;
+				position: relative;
+				padding-left: 45px;
+				margin-bottom: 12px;
+				top: 2px;
+				cursor: pointer;
+				font-size: 15px;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+			}
+
+			/* Hide the browser's default radio button */
+			.container input {
+				position: absolute;
+				opacity: 0;
+				cursor: pointer;
+			}
+
+			/* Create a custom radio button */
+			.checkmark {
+				position: absolute;
+				top: 2px;
+				left: 0;
+				height: 25px;
+				width: 25px;
+				background-color: #eee;
+				border-radius: 50%;
+				margin-left: 2%;
+			}
+
+			/* On mouse-over, add a grey background color */
+			.container:hover input~.checkmark {
+				background-color: #ccc;
+			}
+
+			/* When the radio button is checked, add a blue background */
+			.container input:checked~.checkmark {
+				background-color: #2196F3;
+			}
+
+			/* Create the indicator (the dot/circle - hidden when not checked) */
+			.checkmark:after {
+				content: "";
+				position: absolute;
+				display: none;
+			}
+
+			/* Show the indicator (dot/circle) when checked */
+			.container input:checked~.checkmark:after {
+				display: block;
+			}
+
+			/* Style the indicator (dot/circle) */
+			.container .checkmark:after {
+				top: 9px;
+				left: 9px;
+				width: 8px;
+				height: 8px;
+				border-radius: 50%;
+				background: white;
+			}
+
+			.div5 {
+				height: 10vh;
+				width: 100%;
+			}
+
+			.bt1 {
+				height: 7vh;
+				width: 80%;
+				border: none;
+				color: white;
+				background-color: #3d5af1;
+				margin-left: 10%;
+				margin-top: 2%;
+				border-radius: 10px;
+			}
+
+			input[type=date] {
+				height: 8vh;
+				width: 80%;
+				border: none;
+				border-radius: 12px;
+				border: 1px solid lightgrey;
+				outline: none;
+				margin-top: 1%;
+				margin-left: 8%;
+
+			}
+		}
+
+		@media(min-height: 660px) {
+			.div5 {
+				height: 8vh;
+			}
+		}
+
+		@media(min-width: 410px) {
+			.div4 {
+				height: 40vh;
+			}
+		}
+
+		@media(min-height: 800px) {
+			.div4 {
+				height: 35vh;
+			}
+		}
+
+
+
+		.details {
+			/* margin-top: 10px; */
+			margin-left: 20px;
+		}
+
+
+		#time {
+			margin-top: 10px;
+			font-size: small;
+		}
+	</style>
+</head>
+
+<body onload="init();">
+	<div class="div1">
+		<div class="header-div">
+			<a href="luggage.html"> <img id="back" src="back.jpg" alt=""> </a>
+			<img id="logo" src="logo.jpg" alt="">
+			<span style="position: relative; font-size: 20px; top: 18px; left: 100px;"> 2</span>
+		</div>
+		<div class="div3">
+			<p class="p1" style="font-size: 16px;">What time shall we pickup up your luggage?</p>
+			<p class="p2">
+				Date of pick up
+			</p>
+			<input type="date" id="birthday" name="birthday" id="d1">
+		</div>
+		<div class="div4">
+			<label class="container"> 12:00 - 13:00
+				<input type="radio" checked="checked" name="radio">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container">13:00 - 14:00
+				<input type="radio" name="radio">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container">14:00 - 15:00
+				<input type="radio" name="radio">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container">15:00 - 16:00
+				<input type="radio" name="radio">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container">16:00 - 17:00
+				<input type="radio" name="radio">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container">17:00 - 18:00
+				<input type="radio" name="radio">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container">18:00 - 19:00
+				<input type="radio" name="radio">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+		<div class="div5">
+			<a href="pickup.html"> <button class="bt1" onclick="sub()"> Continue</button> </a>
+		</div>
+	</div>
+
+</body>
+
+</html>
+<script type="text/javascript">
+	function init() {
+		// Retrieving the text input's value which was stored into localStorage
+		var source = localStorage.getItem("source");
+		var destination = localStorage.getItem("destination");
+		var time = localStorage.getItem("time");
+
+		// Writing the value in the document
+		document.getElementById('flight').innerHTML = source + " " + "---" + "  " + destination;
+		document.getElementById('time').innerHTML = time;
+	}
+	function sub() {
+		var d1 = document.getElementById("d1").value;
+		localStorage.setItem("d1", d1);
+	}
+</script>
