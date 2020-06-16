@@ -52,6 +52,18 @@
         transition: max-height 0.2s ease-out;
         background-color: #fff;
     }
+    .ip1{
+        text-indent: 15px;
+    background-color: #fafaf6;
+     height: 10vh;
+    margin-top: 10px;
+    border-style: none;
+    border-radius: 5px;
+    width: 98%;
+    }
+    ::placeholder{
+        font-size: 18px;
+    };
 </style>
 
 <body>
@@ -99,6 +111,7 @@
                     <option value="Transavia">Transavia</option>
                 </select>
                 <input required type="date" class="input" id="time" placeholder="Departure date">
+                <input type="text" name="Flightnumber" class="ip1" placeholder="Flightnumber">
                 <button class=" col" onclick="tosubmit()">Book Now</button>
             </form>
         </div>
