@@ -144,7 +144,7 @@
 	<div class="header-div">
 			<a href="index.html"> <img id="back" src="back.jpg" alt=""> </a>
 			<img id="logo" src="logo.jpg" alt="">
-			<span style="position: relative; font-size: 20px; top: 18px; left: 100px;"> 1</span>
+			<span style="position: relative; font-size: 20px; top: 18px; left: 100px;"> 1/6</span>
 		</div>
 		<div class="div2">
 			<div class="div21">
@@ -186,8 +186,8 @@
 <script type="text/javascript">
 	var click = 0;
 	var price = 15;
-	var a = 15;
-	var i = 1;
+	/*var a = 15;
+	var i = 1;*/
 	function plus() {
 		click += 1;
 		document.getElementById('p1').value = click;
@@ -195,8 +195,9 @@
 			document.getElementById('amount').value = "Total Amount -" + "$" + price;
 		}
 		else {
-			price += a + (5 * i);
-			i++;
+			/*price += a + (5 * i);
+			i++;*/
+			price+=5;
 			document.getElementById('amount').value = "Total Amount -" + " " + "$" + price;;
 		}
 
@@ -211,8 +212,9 @@
 		}
 		else if (click > 0) {
 			document.getElementById('p1').value = click;
-			i--;
-			price -= a + (5 * i);
+			/*i--;
+			price -= a + (5 * i);*/
+			price-=5;
 			document.getElementById('amount').value = "Total Amount -" + "$" + price;;
 		}
 	}
