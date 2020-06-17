@@ -105,15 +105,21 @@ input[type=date]{
 }
 input[type=date]:before{
     content: attr(placeholder) !important;
-    color: #aaa;
+    color: black;
     margin-right: 0.5em;
+    width: 100%;
+     position: relative;
+    left: 12px;
+}
+::placeholder{
+   font-style: bold;
 }
 .airport-select, button{
     width: 100%;
     font-size: 1.1em;
     display: block;
     position: relative;
-    top: 10px;
+    top: 3px;
     border-radius: 16px;
 }
 .sub-container{
@@ -170,10 +176,5 @@ input[type=date]:before{
 }
 
 
-input[type=date]:required:invalid::-webkit-datetime-edit {
-    color: transparent;
-}
-input[type=date]:focus::-webkit-datetime-edit {
-    color: solidblack;
-}
+
 
