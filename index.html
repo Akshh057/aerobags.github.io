@@ -64,6 +64,10 @@
     }
     ::placeholder{
         font-size: 18px;
+        color: black;
+        font-weight: bold;
+        
+
     };
 </style>
 
@@ -92,7 +96,7 @@
         </div>
         <div class="sub-container subcontainer1" id="form" style="background-color:#FAFAFA;">
             <form action="luggage.html">
-                <select name="origin-apt" class="input airport-select" id="source">
+                <select name="origin-apt" class="input airport-select" id="source" style="font-weight: bold;">
                     <option value="" disabled selected="">Origin Airport</option>
                     <option value="Den Helder Airport DHR"><span>Den Helder Airport ,DHR</span></option>
                     <option value="Amsterdam Airport Schiphol AMS">Amsterdam Airport Schiphol ,AMS</option>
@@ -101,7 +105,7 @@
                     <option value="Groningen Airport Eelde GRQ">Groningen Airport Eelde ,GRQ</option>
                 </select>
                 <select name="origin-apt" class="input airport-select" id="destination" onfocus="check()"
-                    onblur="checks()">
+                    onblur="checks()" style="font-weight: bold;">
                     <option value="" disabled selected="">Destination Airport</option>
                     <option value="Den Helder Airport DHR"><span>Den Helder Airport ,DHR</span></option>
                     <option value="Amsterdam Airport Schiphol AMS">Amsterdam Airport Schiphol ,AMS</option>
@@ -111,7 +115,7 @@
                 </select>
                 <!--  <input required type="text" name="origin" placeholder="Origin Airport" class="input">
                 <input required type="text" name="destination" placeholder="Destination Airport" class="input"> -->
-                <select name="Airline" class="input" id="airline-select">
+                <select name="Airline" class="input" id="airline-select" style="font-weight: bold;">
                     <option value="" disabled selected="">Choose Airlines</option>
                     <option value="KLM">KLM</option>
                     <option value="AIS Airlines">AIS Airlines</option>
@@ -123,7 +127,7 @@
     <div class='col-sm-6'>
       <div class="form-group ">
         <div class='input-group date ' id='datetimepicker1'>
-          <input type='text' class="form-control bg-light text-dark border border-0 input-lg" id="time">
+          <input type='text' class="form-control bg-light text-dark border border-0 input-lg" id="time" placeholder="Departure time" style="height: 7vh;">
           <span class="input-group-addon">
             <span class="glyphicon glyphicon-calendar"></span>
           </span>
