@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="main.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <title>Travel</title>
 </head>
 <style type="text/css">
@@ -67,6 +68,13 @@
 </style>
 
 <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">
     <header>
         <nav>
             <div id="logo" class="nav-item"><img src="logo.jpg" alt="logo" height="100px" width="100px">
@@ -110,7 +118,20 @@
                     <option value="Corendon Dutch Airlines">Corendon Dutch Airlines</option>
                     <option value="Transavia">Transavia</option>
                 </select>
-                <input required type="date" class="input" id="time" placeholder="Departure date">
+                 <div class="container">
+  <div class="row">
+    <div class='col-sm-6'>
+      <div class="form-group ">
+        <div class='input-group date ' id='datetimepicker1'>
+          <input type='text' class="form-control bg-light text-dark border border-0 input-lg" id="time">
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
                 <input type="text" name="Flightnumber" class="ip1" placeholder="Flightnumber">
                 <button class=" col" onclick="tosubmit()">Book Now</button>
             </form>
@@ -206,6 +227,9 @@
 
         return true;
     }
+    $(function() {
+  $('#datetimepicker1').datetimepicker();
+});
 
 </script>
 
