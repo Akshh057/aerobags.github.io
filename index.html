@@ -56,11 +56,11 @@
     .ip1{
         text-indent: 15px;
     background-color: #fafaf6;
-     height: 10vh;
+     height: 9vh;
     margin-top: 10px;
     border-style: none;
-    border-radius: 5px;
-    width: 98%;
+    border-radius: 10px;
+    width: 99%;
     }
     ::placeholder{
         font-size: 18px;
@@ -96,7 +96,7 @@
         </div>
         <div class="sub-container subcontainer1" id="form" style="background-color:#FAFAFA;">
             <form action="luggage.html">
-                <select name="origin-apt" class="input airport-select" id="source" style="font-weight: bold;">
+                <select name="origin-apt" class="input airport-select" id="source" style="font-weight: bold; border: 1px solid grey">
                     <option value="" disabled selected="">Origin Airport</option>
                     <option value="Den Helder Airport DHR"><span>Den Helder Airport ,DHR</span></option>
                     <option value="Amsterdam Airport Schiphol AMS">Amsterdam Airport Schiphol ,AMS</option>
@@ -105,7 +105,7 @@
                     <option value="Groningen Airport Eelde GRQ">Groningen Airport Eelde ,GRQ</option>
                 </select>
                 <select name="origin-apt" class="input airport-select" id="destination" onfocus="check()"
-                    onblur="checks()" style="font-weight: bold;">
+                    onblur="checks()" style="font-weight: bold; border: 1px solid grey">
                     <option value="" disabled selected="">Destination Airport</option>
                     <option value="Den Helder Airport DHR"><span>Den Helder Airport ,DHR</span></option>
                     <option value="Amsterdam Airport Schiphol AMS">Amsterdam Airport Schiphol ,AMS</option>
@@ -115,28 +115,28 @@
                 </select>
                 <!--  <input required type="text" name="origin" placeholder="Origin Airport" class="input">
                 <input required type="text" name="destination" placeholder="Destination Airport" class="input"> -->
-                <select name="Airline" class="input" id="airline-select" style="font-weight: bold;">
+                <select name="Airline" class="input mt-4" id="airline-select" style="font-weight: bold; border-radius: 16px; border: 1px solid grey">
                     <option value="" disabled selected="">Choose Airlines</option>
                     <option value="KLM">KLM</option>
                     <option value="AIS Airlines">AIS Airlines</option>
                     <option value="Corendon Dutch Airlines">Corendon Dutch Airlines</option>
                     <option value="Transavia">Transavia</option>
                 </select>
-                 <div class="container">
+                 <div class="container" style="width: 105%;">
   <div class="row mt-4">
-    <div class='col-sm-6'>
-      <div class="form-group ">
-        <div class='input-group date ' id='datetimepicker1'>
-          <input type='text' class="form-control bg-light text-dark border border-0 input-lg" id="time" placeholder="Departure time" style="height: 7vh;">
-          <span class="input-group-addon">
-            <span class="glyphicon glyphicon-calendar"></span>
+    <div class='col-sm-8' style="width: 120%; margin-left: -4%;">
+      <div class="form-group">
+        <div class='input-group date ' id='datetimepicker1' style=" border-radius: 16px; border: 1px solid grey ">
+          <input type='text' class="form-control bg-light text-dark border border-0 input-lg" id="time" placeholder="Departure time" style="height: 10.5vh; width: 110%; border-radius: 16px">
+          <span class="input-group-addon" style="width: 25%; border-radius: 16px">
+            <span class="glyphicon glyphicon-calendar" style="left: 12px;"></span>
           </span>
         </div>
       </div>
     </div>
   </div>
 </div>
-                <input type="text" name="Flightnumber" class="ip1" placeholder="Flightnumber">
+                <input type="text" name="Flightnumber" class="ip1" placeholder="Flightnumber" style="border: 1px solid grey">
                 <button class=" col" onclick="tosubmit()">Book Now</button>
             </form>
         </div>
