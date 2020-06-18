@@ -99,8 +99,9 @@
 				padding-left: 45px;
 				margin-bottom: 12px;
 				top: 2px;
+				left: 40px;
 				cursor: pointer;
-				font-size: 22px;
+				font-size: 15px;
 				-webkit-user-select: none;
 				-moz-user-select: none;
 				-ms-user-select: none;
@@ -118,13 +119,14 @@
 			.checkmark {
 				position: absolute;
 				top: 2px;
-				left: 0;
+				left: -40px;
 				height: 25px;
 				width: 25px;
 				background-color: #eee;
 				border-radius: 50%;
 				margin-left: 2%;
 			}
+
 
 			/* On mouse-over, add a grey background color */
 			.container:hover input~.checkmark {
@@ -235,6 +237,7 @@
 				padding-left: 45px;
 				margin-bottom: 12px;
 				top: 2px;
+				left: 40px;
 				cursor: pointer;
 				font-size: 15px;
 				-webkit-user-select: none;
@@ -254,7 +257,7 @@
 			.checkmark {
 				position: absolute;
 				top: 2px;
-				left: 0;
+				left: -40px;
 				height: 25px;
 				width: 25px;
 				background-color: #eee;
@@ -357,6 +360,13 @@
 </head>
 
 <body onload="init();">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">
 	<div class="div1">
 		<div class="header-div">
 			<a href="luggage.html"> <img id="back" src="back.jpg" alt=""> </a>
@@ -368,7 +378,20 @@
 			<p class="p2">
 				Date of pick up
 			</p>
-			<input type="date" id="birthday" name="birthday" id="d1">
+			 <div class="container" style="width: 105%; margin-left: -10%;">
+  <div class="row mt-4">
+    <div class='col-sm-8' style="width: 120%; margin-left: -4%;">
+      <div class="form-group">
+        <div class='input-group date ' id='datetimepicker1' style=" border-radius: 16px; border: 1px solid grey ">
+          <input type='text' class="form-control bg-light text-dark border border-0 input-lg" id="time" placeholder="Departure time" style="height: 5vh; width: 110%; border-radius: 16px">
+          <span class="input-group-addon" style="width: 25%; border-radius: 16px">
+            <span class="glyphicon glyphicon-calendar" style="left: 12px;"></span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 		</div>
 		<div class="div4">
 			<label class="container"> 12:00 - 13:00
@@ -396,7 +419,7 @@
 				<span class="checkmark"></span>
 			</label>
 			<label class="container">18:00 - 19:00
-				<input type="radio" name="radio">
+				<input type="radio" name="radio" style=" position:relative; right:30px; ">
 				<span class="checkmark"></span>
 			</label>
 		</div>
